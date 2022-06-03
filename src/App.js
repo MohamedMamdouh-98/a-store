@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
+import axios from 'axios';
+
+import Store from './components/store';
 
 function App() {
+  const [storeItems, seStoreItems] = useState([]);
+
+  useEffect(()=>{
+    axios.get("https://fakestoreapi.com/products").then(({ data })=>{
+      seStoreItems(data)
+    })
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <Store items={storeItems} onItemAdd={ itemData => {
+          seStoreItems([...storeItems, itemData])
+        }}/>
+      </Container>
     </div>
   );
 }
