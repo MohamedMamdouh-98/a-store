@@ -23,9 +23,6 @@
   font-family: 'Cairo', sans-serif;
   text-transform: capitalize;
 }
-span{
-  color: var(--orange);
-}
 
 .button{
   cursor: pointer;
