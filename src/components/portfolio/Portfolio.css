@@ -1,0 +1,38 @@
+.portfolio{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.portfolio span:nth-of-type(1){
+    color: var(--black);
+    font-size: 2rem;
+    font-weight: bold;
+}
+.portfolio span:nth-of-type(2){
+    color: var(--orange);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.portfolio .Swiper{
+    overflow: visible!important;
+}
+.portfolio-slider{
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.portfolio-slider .Swiper-slide{
+    width: 30rem;
+
+}
+.portfolio img{
+    width: 320px;
+    box-shadow: 1px 6px 18px 3px rgb(87 87 87 / 83%);
+    border-radius: 19px;
+}
+.swiper-wrapper{
+    height: 600px !important;
+    margin: 20px!important;
+}
